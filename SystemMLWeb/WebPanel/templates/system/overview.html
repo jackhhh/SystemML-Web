@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}Overview{% endblock title %}
+
+{% block sidebar %}
+<!-- search form (Optional) -->
+<form action="#" method="get" class="sidebar-form">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search...">
+      <span class="input-group-btn">
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+          </button>
+        </span>
+    </div>
+  </form>
+  <!-- /.search form -->
+
+  <!-- Sidebar Menu -->
+  <ul class="sidebar-menu" data-widget="tree">
+    <li class="header">System</li>
+    <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Overview</span></a></li>
+    <li class="treeview">
+        <a href="#"><i class="fa fa-tasks"></i> <span>All Tasks</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-tag"></i><span>TaskName1</span></a></li>
+            <li><a href="#"><i class="fa fa-tag"></i><span>TaskName2</span></a></li>
+        </ul>
+    </li>
+
+    <li class="header">Algorithm</li>
+    <!-- Optionally, you can add icons to the links -->
+
+    <li class="treeview">
+        <a href="#"><i class="fa fa-bar-chart"></i> <span>Descriptive Statistics</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><span>Univariate Statistics</span></a></li>
+            <li><a href="#"><span>Bivariate Statistics</span></a></li>
+            <li><a href="#"><span>Stratified Bivariate Statistics</span></a></li>
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#"><i class="fa fa-arrows-alt"></i> <span>Classification</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><span>Multinomial Logistic Regression</span></a></li>
+            <li class="treeview">
+              <a href="#"><span>Support Vector Machines</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="#"><span>Binary-Class SVM</span></a></li>
+                  <li><a href="#"><span>Multi-Class SVM</span></a></li>
+              </ul>
+            </li>
+            <li><a href="#"><span>Naive Bayes</span></a></li>
+            <li><a href="#"><span>Decision Trees</span></a></li>
+            <li><a href="#"><span>Random Forests</span></a></li>
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#"><i class="fa fa-circle"></i> <span>Clustering</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><span>K-Means Clustering</span></a></li>
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#"><i class="fa fa-line-chart"></i> <span>Regression</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><span>Linear Regression</span></a></li>
+            <li><a href="#"><span>Stepwise Linear Regression</span></a></li>
+            <li><a href="#"><span>Generalized Linear Models</span></a></li>
+            <li><a href="#"><span>Stepwise Generalized Linear Regression</span></a></li>
+            <li><a href="#"><span>Regression Scoring and Prediction</span></a></li>
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#"><i class="fa fa-th-large"></i> <span>Matrix Factorization</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><span>Principal Component Analysis</span></a></li>
+            <li><a href="#"><span>Matrix Completion via Alternating Minimizations</span></a></li>
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#"><i class="fa fa-check-square"></i> <span>Survival Analysis</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><span>Kaplan-Meier Survival Analysis</span></a></li>
+            <li><a href="#"><span>Cox Proportional Hazard Regression Model</span></a></li>
+        </ul>
+    </li>
+
+    <li><a href="#"><i class="fa fa-link"></i> <span>Bibliography</span></a></li>
+
+  </ul>
+  <!-- /.sidebar-menu -->
+{% endblock sidebar %}
