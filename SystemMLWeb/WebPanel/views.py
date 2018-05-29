@@ -1,5 +1,7 @@
+
 from django.shortcuts import render
 
 # Create your views here.
 
-def 
+def index(request):
+    return render(request, 'algorithm/test.html')
