@@ -19,5 +19,39 @@
 
 
 {% block main-page %}
-
+  <div data-header="任务">
+    <div>
+        <section>
+            <label for="taskName">任务名称</label><input name="taskName" class="form-control">
+        </section>
+        <section class="form-group">
+            <label for="deployMode">部署模式</label>
+            <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                <option selected="selected">Cluster</option>
+                <option>Client</option>
+              </select>
+            <input name="deployMode" style="display: none">
+        </section>
+    </div>
+  </div>
+  <div data-header="运行时">
+      <div>
+        <section>
+            <label for="executorNumber">Executor数量</label><input name="executorNumber" class="form-control">
+        </section>
+        <section>
+            <label for="driverMemory">驱动内存</label><input name="driverMemory" class="form-control">
+        </section>
+        <section>
+            <label for="executorMemory">Executor内存</label><input name="executorMemory" class="form-control">
+        </section>
+      </div>
+  </div>
+  <div data-header="算法">
+    <div>
+        <section>
+            <label for="kValue">k</label><input name="kValue" class="form-control">
+        </section>
+    </div>
+  </div>
 {% endblock main-page %}

@@ -1,0 +1,76 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.content-wrapper > .content-header {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.content-wrapper > .content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 0;
+    margin-right: 0;
+}
+.configuration-items {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow-y: auto;
+}
+
+div.configuration-items > div::before {
+    content: attr(data-header);
+    font-size: 18px;
+    padding-top: 18px;
+    font-weight: bold;
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    border-color: rgb(220, 220, 220);
+    display: block;
+    padding-left: 4px;
+    padding-right: 4px;
+}div.configuration-items > div:first-child::before {
+    border-width: 0;
+    padding-top: 0;
+}
+div.configuration-items > div {
+    margin-bottom: 18px;
+}
+div.configuration-items > div > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 6px;
+    margin-top: -6px;
+}
+div.configuration-items > div >  div > section {
+    margin-right: 24px;
+    margin-top: 12px;
+}
+div.configuration-items > div >  div > section > label {
+    display: block;
+}
+
+.command-preview-container {
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 100px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.command-preview-container > textarea {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.command-preview-container > button {
+    align-self: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-top: 8px;
+}
