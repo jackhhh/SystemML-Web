@@ -4,11 +4,7 @@
     var set_algorithm_menu_highlight = function(algorithm) {
         var sidebar = $("#sidebar-menu");
         var item = sidebar.find("." + algorithm);
-        var activeItems = document.getElementsByClassName('active');
-        for(var i = 0; i < activeItems.length; i++){
-            activeItems[i].classList.remove("menu-open");
-            activeItems[i].classList.remove("active");
-        }
+        $(".active").removeClass("active");
         if(item.length > 0) {
             item = item[0];
             $(item).addClass("active");
@@ -32,3 +28,8 @@
 
     window.addEventListener("load", load, false);
 })(window);
+
+function submit(){
+    var info = document.getElementsByClassName('form-control');
+
+}
