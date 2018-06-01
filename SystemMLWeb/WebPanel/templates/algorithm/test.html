@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Overview{% endblock title %}
+{% block title %}Test{% endblock title %}
 
 {% block page-header %}
 <section class="content-header">
     <h1>
-      Overview
+      K-means 聚类分析
       <small>System Status</small>
     </h1>
 </section>
 {% endblock page-header %}
 
 {% block sidebar %}
-
+<script>
+  window.algorithm_name = "kmeans";
+</script>
 {% endblock sidebar %}
 
 
 {% block main-page %}
-
-<iframe id="cmf-frame" src="http://10.2.70.223:8089/cmf/home" width='100%' height='1000' frameborder='0'></iframe>
 
 {% endblock main-page %}
