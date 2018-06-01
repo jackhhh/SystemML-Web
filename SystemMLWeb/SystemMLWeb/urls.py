@@ -16,12 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from WebPanel import views as WebPanelViews
-from WebPanel import algorithmviews as WebPanelAlgorithmViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', WebPanelViews.index),
     path('index/', WebPanelViews.index),
-    path('algorithm/kmeans', WebPanelAlgorithmViews.kmeans),
+    path('algorithm/kmeans', WebPanelViews.kmeans),
 ]
