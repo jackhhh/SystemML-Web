@@ -20,7 +20,7 @@
 
 {% block main-page %}
 <div class="configuration-items">
-  <div data-header="任务">
+  <div data-header="Task">
     <div>
         <section>
             <label for="taskName">任务名称</label><input name="taskName" class="form-control">
@@ -35,7 +35,7 @@
         </section>
     </div>
   </div>
-  <div data-header="运行时">
+  <div data-header="Runtime">
       <div>
         <section>
             <label for="executorNumber">Executor数量</label><input name="executorNumber" class="form-control">
@@ -48,10 +48,46 @@
         </section>
       </div>
   </div>
-  <div data-header="算法">
+  <div data-header="Algorithm">
     <div>
         <section>
-            <label for="kValue">k</label><input name="kValue" class="form-control">
+            <label for="X-file">X-file路径</label><input name="X-file" class="form-control">
+        </section>
+        <section>
+            <label for="C-file">C-file路径</label><input name="C-file" class="form-control">
+        </section>
+        <section>
+            <label for="kValue">K值</label><input name="kValue" class="form-control">
+        </section>
+        <section>
+            <label for="runs">runs</label><input name="runs" class="form-control">
+        </section>
+    </br>
+        <section>
+            <label for="maxi">maxi</label><input name="maxi" class="form-control">
+        </section>
+        <section>
+            <label for="tol">tol</label><input name="tol" class="form-control">
+        </section>
+        <section>
+            <label for="samp">samp</label><input name="samp" class="form-control">
+        </section>
+        <section>
+            <label for="Y-file">Y-file路径</label><input name="Y-file" class="form-control">
+        </section>
+        <section>
+            <label for="fmt">Format</label><input name="fmt" class="form-control">
+        </section>
+        <section>
+            <label for="verb">verb</label><input name="verb" class="form-control">
+        </section>
+        <section class="form-group">
+            <label for="isY">isY</label>
+            <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                <option selected="selected">False</option>
+                <option>True</option>
+              </select>
+            <input name="isY" style="display: none">
         </section>
     </div>
   </div>

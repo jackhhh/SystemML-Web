@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from WebPanel import views as WebPanelViews
+from api import views as apiViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,5 @@ urlpatterns = [
     path('', WebPanelViews.index),
     path('index/', WebPanelViews.index),
     path('algorithm/kmeans', WebPanelViews.kmeans),
+    path('task/submit', apiViews.tasksubmit),
 ]
