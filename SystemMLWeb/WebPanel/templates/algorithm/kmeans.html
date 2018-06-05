@@ -21,7 +21,8 @@
 {% block main-page %}
 <div class="row">
     <div class="col-md-6">
-            <form role="form">
+            <form role="form" method="POST">
+                {% csrf_token %}
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title">Task Info</h3>
@@ -74,36 +75,42 @@
                             <input name="isY" style="display: none"></div>
                     </div>
                 </div>
+
+                <button type="button submit" class="btn btn-block btn-primary">Submit</button>
         
             </form>
         </div>
         <div class="col-md-6">
             <div class="box box-warning">
                 <div class="box-header with-border">
-                        <h3 class="box-title">Arguments - K-Means</h3>
-                    </div>
-                    <div class="box-body">
-                        <p><strong>X</strong>: Location to read matrix <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>X</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-253" style="width: 1.044em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1000.84em, 2.294em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-254"><span class="mi" id="MathJax-Span-255" style="font-family: MathJax_Math-italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>X</mi></math></span></span><script type="math/tex" id="MathJax-Element-18">X</script> with the input data records as rows</p>
-                        <p><strong>C</strong>: (default: <code>"C.mtx"</code>) Location to store the output matrix with the best available cluster centroids as rows</p>
-                        <p><strong>k</strong>: Number of clusters (and centroids)</p>
-                        <p><strong>runs</strong>: (default: <code>10</code>) Number of parallel runs, each run with different initial centroids</p>
-                        <p><strong>maxi</strong>: (default: <code>1000</code>) Maximum number of iterations per run</p>
-                        <p><strong>tol</strong>: (default: <code>0.000001</code>) Tolerance (epsilon) for single-iteration WCSS_C change ratio</p>
-                        <p><strong>samp</strong>: (default: <code>50</code>) Average number of records per centroid in data samples used in the centroid initialization procedure</p>
-                        <p><strong>Y</strong>: (default: <code>"Y.mtx"</code>) Location to store the one-column matrix <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>Y</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-256" style="width: 0.888em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1000.73em, 2.294em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-257"><span class="mi" id="MathJax-Span-258" style="font-family: MathJax_Math-italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Y</mi></math></span></span><script type="math/tex" id="MathJax-Element-19">Y</script> with the best available mapping of records to clusters (defined by the output centroids)</p>
-                        <p><strong>isY</strong>: (default: <code>FALSE</code>) Do not write matrix&nbsp;<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-20-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>Y</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-259" style="width: 0.888em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1000.73em, 2.294em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-260"><span class="mi" id="MathJax-Span-261" style="font-family: MathJax_Math-italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Y</mi></math></span></span><script type="math/tex" id="MathJax-Element-20">Y</script></p>
-                        <p><strong>fmt</strong>: (default: <code>"text"</code>) Matrix file output format, such as <code>text</code>, <code>mm</code>, or <code>csv</code>; see read/write functions in SystemML Language Reference for details.</p>
-                        <p><strong>verb</strong>: (default: <code>FALSE</code>) Do not print per-iteration statistics for each run</p>
-                    </div>
+                   <h3 class="box-title">Arguments - K-Means</h3>
+               </div>
+               <div class="box-body">
+                   <p><strong>X</strong>: Location to read matrix <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>X</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-253" style="width: 1.044em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1000.84em, 2.294em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-254"><span class="mi" id="MathJax-Span-255" style="font-family: MathJax_Math-italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>X</mi></math></span></span><script type="math/tex" id="MathJax-Element-18">X</script> with the input data records as rows</p>
+                   <p><strong>C</strong>: (default: <code>"C.mtx"</code>) Location to store the output matrix with the best available cluster centroids as rows</p>
+                   <p><strong>k</strong>: Number of clusters (and centroids)</p>
+                   <p><strong>runs</strong>: (default: <code>10</code>) Number of parallel runs, each run with different initial centroids</p>
+                   <p><strong>maxi</strong>: (default: <code>1000</code>) Maximum number of iterations per run</p>
+                   <p><strong>tol</strong>: (default: <code>0.000001</code>) Tolerance (epsilon) for single-iteration WCSS_C change ratio</p>
+                   <p><strong>samp</strong>: (default: <code>50</code>) Average number of records per centroid in data samples used in the centroid initialization procedure</p>
+                   <p><strong>Y</strong>: (default: <code>"Y.mtx"</code>) Location to store the one-column matrix <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>Y</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-256" style="width: 0.888em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1000.73em, 2.294em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-257"><span class="mi" id="MathJax-Span-258" style="font-family: MathJax_Math-italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Y</mi></math></span></span><script type="math/tex" id="MathJax-Element-19">Y</script> with the best available mapping of records to clusters (defined by the output centroids)</p>
+                   <p><strong>isY</strong>: (default: <code>FALSE</code>) Do not write matrix&nbsp;<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-20-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>Y</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-259" style="width: 0.888em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.732em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.305em, 1000.73em, 2.294em, -999.997em); top: -2.133em; left: 0em;"><span class="mrow" id="MathJax-Span-260"><span class="mi" id="MathJax-Span-261" style="font-family: MathJax_Math-italic;">Y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.159em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.138em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Y</mi></math></span></span><script type="math/tex" id="MathJax-Element-20">Y</script></p>
+                   <p><strong>fmt</strong>: (default: <code>"text"</code>) Matrix file output format, such as <code>text</code>, <code>mm</code>, or <code>csv</code>; see read/write functions in SystemML Language Reference for details.</p>
+                   <p><strong>verb</strong>: (default: <code>FALSE</code>) Do not print per-iteration statistics for each run</p>
+               </div>
             </div> 
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Command Preview</h3>
+                </div>
+                <div class="box-body">
+                    <textarea class="form-control" rows="3" disabled="true" style="cursor: default; resize: none"></textarea>
+                </div>
+            </div>
         </div>
 </div>
 
 
 
-<div class="command-preview-container">
-    <textarea class="form-control" disabled="true" style="cursor: default; resize: none"></textarea>
-    
-    <button class="pull-right btn btn-default">提交<i class="fa fa-arrow-circle-right" style="margin-left: 6px"></i></button>
-</div>
+
 {% endblock main-page %}
